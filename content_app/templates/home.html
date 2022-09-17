@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+    <h1 style="text-align: center;">Words learned </h1>
+    <hr>
+    {% if blogs %}
+        {% for blog in blogs %}
+            <h2>{{blog.title}}</h2>
+            <h3>{{blog.content}}</h3>
+            <small>{{blog.date_posted}} - {{blog.user.username}}</small>
+            {% if user.is_superuser or user.id == blog.user.id %}
+                <a href="{% url 'edit-blog' id=blog.id%}">edit</a>
+                <a href="{% url 'delete-blog' id=blog.id %}">delete</a>
+            {% endif %}
+            <hr>
+        {% endfor %}
+    {% else %}
+        <h2 style="text-align: center;">No Pre-learnt words so far.</h2>
+    {% endif %}
+    <div style="text-align: center;">
+        <a href="{% url 'add-blog' %}" class="btn btn-primary">Add</a> 
+    </div>
+{% endblock content %}

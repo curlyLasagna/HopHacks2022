@@ -4,12 +4,20 @@
 {% block title %}Login{% endblock title %}
 
 {% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <h2 style="text-align: center;">Login</h2>
 
     <form method="POST">
         {% csrf_token %}
         {{form | crispy}}
         <input type="submit">
+        <br>
+        <br>
+        <br>
     </form>
 
     {% if messages %}

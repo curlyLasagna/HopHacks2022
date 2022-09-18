@@ -67,3 +67,6 @@ def edit_blog(request, id):
 
 def not_found(request):
     return render(request, 'core/404.html')
+
+def home_page(request):
+    return render(request,'core/home_page.html')

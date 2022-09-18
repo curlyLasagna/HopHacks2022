@@ -65,8 +65,18 @@ def edit_blog(request, id):
             blog.save()
             return redirect('home')
 
+@login_required
 def not_found(request):
     return render(request, 'core/404.html')
 
+@login_required
 def home_page(request):
     return render(request,'core/home_page.html')
+
+@login_required
+def train_word(request):
+    return render(request,'core/train_word.html')
+
+@login_required
+def train_syllables(request):
+    return render(request,'core/train_syllables.html')

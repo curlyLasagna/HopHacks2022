@@ -8,5 +8,7 @@ urlpatterns = [
     path('delete-blog/<int:id>', views.delete_blog, name='delete-blog'),
     path('edit-blog/<int:id>', views.edit_blog, name='edit-blog'),
     path('404/', views.not_found, name='404'),
-    path('home_page/', views.home_page, name ='home_page')
+    path('home_page/', views.home_page, name ='home_page'),
+    path('train_word/', views.train_word, name ='train_word'),
+    path('train_syllables/', views.train_syllables, name ='train_syllables')
 ]

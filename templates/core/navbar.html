@@ -1,53 +1,54 @@
-    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b0b4b1b4;">
+
+  <div class="btn-group btn-group-toggle btn" data-toggle="buttons"></div>
+  <a class="btn btn-outline-light my-2 my-lg" href="{% url 'home_page' %}" style="border:transparent"> &emsp; &emsp;
+    <b>Home</b></a>
+  <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <span class="navbar-toggler-icon"></span> -->
+  </button>
+
+  <a class="btn btn-outline-light my-2 my-lg" href="{% url 'home' %}" style="border:transparent">&emsp;
+    <b>Progress</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <span class="navbar-toggler-icon"></span> -->
+  </button>
+
+  <a class="btn btn-outline-light my-2 my-lg" href="{% url 'train_word' %}" style="border:transparent"> &emsp; <b>Train
+      word</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <span class="navbar-toggler-icon"></span> -->
+  </button>
+
+  <a class="btn btn-outline-light my-2 my-lg" href="{% url 'train_syllables' %}" style="border:transparent"> &emsp;
+    <b>Train syllables</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b0b4b1b4;">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    {% if user.is_authenticated %}
+    <p style="color: white;">Hello, {{user.username}} &emsp; </p>
+    <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'logout' %}">Logout </a>
+    <a> &emsp; </a>
+    <a> &emsp; </a>
+    <a> &emsp; </a>
+    {% else %}
+    <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'register' %}">Register </a>
+    <a> &emsp; </a>
 
-      <div class="btn-group btn-group-toggle btn" data-toggle="buttons"></div>
-      <a class="btn btn-outline-light my-2 my-lg" href="{% url 'home_page' %}" style="border:transparent"> &emsp; &emsp; <b>Home</b></a>
-        <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">Login</a>
+    <a> &emsp; </a>
+    <a> &emsp; </a>
+    <a> &emsp; </a>
+    {% endif %}
+  </div>
 
-        <a class="btn btn-outline-light my-2 my-lg" href="{% url 'home' %}" style="border:transparent" >&emsp; <b>Progress</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <a class="btn btn-outline-light my-2 my-lg" href="{% url 'train_word' %}" style="border:transparent" > &emsp; <b>Train word</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <a class="btn btn-outline-light my-2 my-lg" href="{% url 'train_syllables' %}" style="border:transparent" > &emsp; <b>Train syllables</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-       
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-          </ul>
-          {% if user.is_authenticated %}
-            <p style="color: white;">Hello, {{user.username}} &emsp; </p>
-            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'logout' %}">Logout </a>
-            <a> &emsp; </a>
-            <a> &emsp; </a>
-            <a> &emsp; </a>
-          {% else %}
-            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'register' %}">Register </a>
-            <a> &emsp; </a>
-            
-            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">Login</a>
-            <a> &emsp; </a>
-            <a> &emsp; </a>
-            <a> &emsp; </a>
-          {% endif %}
-        </div>
-        
-      </nav>
-      <!--END NVBAR-->
-
-      
-       
-      
+</nav>
+<!--END NVBAR-->
